@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "822002309377",
+    "project_id": "meta-notion",
+    "storage_bucket": "meta-notion.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:822002309377:android:b4243cd3bb0bb45bc2e300",
+        "android_client_info": {
+          "package_name": "com.example.notion"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "822002309377-qvgpvsnjbdnjc2a9k7mbavedsnfb8el1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlXCrUwapGxndZDvlwL-42ESrA0cWiHbY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "822002309377-qvgpvsnjbdnjc2a9k7mbavedsnfb8el1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
