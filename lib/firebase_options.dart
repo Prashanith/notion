@@ -29,10 +29,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.windows:
         return windows;
       case TargetPlatform.linux:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for linux - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       default:
         throw UnsupportedError(
           'DefaultFirebaseOptions are not supported for this platform.',
@@ -64,7 +61,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '822002309377',
     projectId: 'meta-notion',
     storageBucket: 'meta-notion.firebasestorage.app',
-    iosClientId: '822002309377-q52jkqebjvl8s1ftsn3o8jqmcfdqpdqe.apps.googleusercontent.com',
+    iosClientId:
+        '822002309377-q52jkqebjvl8s1ftsn3o8jqmcfdqpdqe.apps.googleusercontent.com',
     iosBundleId: 'com.example.notion',
   );
 
@@ -74,7 +72,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '822002309377',
     projectId: 'meta-notion',
     storageBucket: 'meta-notion.firebasestorage.app',
-    iosClientId: '822002309377-q52jkqebjvl8s1ftsn3o8jqmcfdqpdqe.apps.googleusercontent.com',
+    iosClientId:
+        '822002309377-q52jkqebjvl8s1ftsn3o8jqmcfdqpdqe.apps.googleusercontent.com',
     iosBundleId: 'com.example.notion',
   );
 
