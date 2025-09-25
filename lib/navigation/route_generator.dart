@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notion/features/init_screen/init_screen.dart';
 import 'package:notion/navigation/routes.dart';
 
 class RouteGenerator {
@@ -17,6 +18,7 @@ class RouteGenerator {
   }
 }
 
+// ignore: non_constant_identifier_names
 Route<dynamic> Page(Widget widget) {
   return MaterialPageRoute(builder: (_) => widget);
 }

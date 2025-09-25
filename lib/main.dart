@@ -7,15 +7,15 @@ import 'package:notion/navigation/route_generator.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  runApp(const MyApp());
+  runApp(const Notion());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class Notion extends StatelessWidget {
+  const Notion({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Notion',
       onGenerateRoute: RouteGenerator.generateRoute,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
