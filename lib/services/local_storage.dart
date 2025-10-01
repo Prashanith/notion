@@ -11,16 +11,16 @@ class LocalStorage {
   Future<void> setValue(String key, Object value) async {
     var s = await secureStore;
     switch (value.runtimeType) {
-      case bool:
+      case const (bool):
         s.setBool(key, value as bool);
         break;
-      case String:
+      case const (String):
         s.setString(key, value as String);
         break;
-      case int:
+      case const (int):
         s.setInt(key, value as int);
         break;
-      case double:
+      case const (double):
         s.setDouble(key, value as double);
         break;
       default:

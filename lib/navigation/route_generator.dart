@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:notion/features/authentication/screens/login.dart';
 import 'package:notion/features/init_screen/init_screen.dart';
+import 'package:notion/features/user/screen/profile.dart';
 import 'package:notion/navigation/routes.dart';
 
 class RouteGenerator {
@@ -9,11 +11,11 @@ class RouteGenerator {
       case Routes.init:
         return Page(const InitScreen());
       case Routes.login:
-        return Page(const AuthenticationScreen());
+        return Page(const Login());
       case Routes.user:
-        return Page(const User());
+        return Page(const Profile());
       default:
-        return Page(const AuthenticationScreen());
+        return Page(const Login());
     }
   }
 }
