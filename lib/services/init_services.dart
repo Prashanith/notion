@@ -8,6 +8,5 @@ class ServiceInitializer {
   static Future<void> initializeServices() async {
     locator.registerSingleton<RouteGenerator>(RouteGenerator());
     locator.registerSingleton<LocalStorage>(LocalStorage());
-
   }
 }

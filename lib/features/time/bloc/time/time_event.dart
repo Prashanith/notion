@@ -1,27 +1,35 @@
 import 'time_state.dart';
 
 sealed class TimeEvent {
-  const TimeEvent();
+  TimeEvent({required this.duration, required this.type});
+  int duration = 47;
+  TimeType type = TimeType.Stopwatch;
 }
 
 final class TimeInit extends TimeEvent {
-  const TimeInit({required this.duration, required this.type});
-  final int duration;
-  final TimeType type;
+  TimeInit({required super.duration, required super.type});
 }
 
 final class TimeStarted extends TimeEvent {
-  const TimeStarted();
+  TimeStarted({required super.duration, required super.type});
 }
 
 final class TimePaused extends TimeEvent {
-  const TimePaused();
+  TimePaused({required super.duration, required super.type});
 }
 
 final class TimeResumed extends TimeEvent {
-  const TimeResumed();
+  TimeResumed({required super.duration, required super.type});
 }
 
 class TimeReset extends TimeEvent {
-  const TimeReset();
+  TimeReset({required super.duration, required super.type});
+}
+
+final class TimeTicked extends TimeEvent {
+  TimeTicked({required super.duration, required super.type});
+}
+
+final class TimeCompleted extends TimeEvent {
+  TimeCompleted({required super.duration, required super.type});
 }

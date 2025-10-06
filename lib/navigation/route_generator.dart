@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:notion/features/authentication/screens/login.dart';
-import 'package:notion/features/init_screen/init_screen.dart';
-import 'package:notion/features/user/screen/profile.dart';
-import 'package:notion/navigation/routes.dart';
+import '../features/authentication/screens/login.dart';
+import '../features/init_screen/init_screen.dart';
+import '../widgets/page_wrappers/bottom_nav_scaffold.dart';
+import 'routes.dart';
 
 class RouteGenerator {
   final GlobalKey<NavigatorState> navigator = GlobalKey<NavigatorState>();
@@ -13,7 +13,7 @@ class RouteGenerator {
       case Routes.login:
         return Page(const Login());
       case Routes.user:
-        return Page(const Profile());
+        return Page(const BottomNavScaffold());
       default:
         return Page(const Login());
     }

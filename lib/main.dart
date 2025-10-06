@@ -1,9 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:notion/firebase_options.dart';
-import 'package:notion/navigation/route_generator.dart';
-import 'package:notion/navigation/routes.dart';
-import 'package:notion/services/init_services.dart';
+import 'firebase_options.dart';
+import 'navigation/route_generator.dart';
+import 'navigation/routes.dart';
+import 'services/init_services.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,6 +19,7 @@ class Notion extends StatelessWidget {
     return MaterialApp(
       title: 'Notion',
       initialRoute: Routes.init,
+      navigatorKey: locator.get<RouteGenerator>().navigator,
       onGenerateRoute: RouteGenerator.generateRoute,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),

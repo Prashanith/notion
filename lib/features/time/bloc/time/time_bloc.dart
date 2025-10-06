@@ -6,15 +6,15 @@ import 'time_state.dart';
 
 class TimeBloc extends Bloc<TimeEvent, TimeState> {
   final Ticker _ticker;
-  
+
   StreamSubscription<int>? _tickerSubscription;
 
-   TimeBloc({required Ticker ticker, })
-      : _ticker = ticker,
-        super(TimeState(duration: 47, type: TimeType.Stopwatch)) {
+  TimeBloc({required Ticker ticker})
+    : _ticker = ticker,
+      super(TimeState(duration: 47, type: TimeType.Stopwatch)) {
     on<TimeInit>(_onStarted);
+    on<TimeTicked>(_onTicked);
     on<TimePaused>(_onPaused);
-    on<_TimeTicked>(_onTicked);
   }
 
   @override
@@ -24,25 +24,23 @@ class TimeBloc extends Bloc<TimeEvent, TimeState> {
   }
 
   void _onStarted(TimeInit event, Emitter<TimeState> emit) {
-    emit(TimerRunInProgress(event.duration));
+    emit(TimeState(duration: event.duration, type: event.type));
     _tickerSubscription?.cancel();
     _tickerSubscription = _ticker
-        .tick(ticks: event.duration)
-        .listen((duration) => add(_TimerTicked(duration: duration)));
+        .tick(ticks: event.duration, type: event.type)
+        .listen(
+          (duration) => add(TimeTicked(duration: duration, type: event.type)),
+        );
   }
 
-  void _onPaused(TimerPaused event, Emitter<TimeState> emit) {
-    if (state is TimerRunInProgress) {
+  void _onPaused(TimePaused event, Emitter<TimeState> emit) {
+    if (state.type == TimeType.Stopwatch) {
       _tickerSubscription?.pause();
-      emit(TimerRunPause(state.duration));
+      emit(TimeState(duration: event.duration, type: event.type));
     }
   }
 
-  void _onTicked(_TimerTicked event, Emitter<TimeState> emit) {
-    emit(
-      event.duration > 0
-          ? TimerRunInProgress(event.duration)
-          : TimerRunComplete(),
-    );
+  void _onTicked(TimeTicked event, Emitter<TimeState> emit) {
+    emit(TimeState(duration: event.duration, type: event.type));
   }
 }

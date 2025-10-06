@@ -1,6 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+
+import '../../features/time/features/stopwatch/screens/stop_watch.dart';
 
 class BottomNavScaffold extends StatefulWidget {
   const BottomNavScaffold({super.key});
@@ -15,22 +16,18 @@ class _BottomNavScaffoldState extends State<BottomNavScaffold> {
   Widget getWidget(int i) {
     switch (i) {
       case 0:
-        return Center();
+        return StopWatch();
       default:
-        return Center();
+        return StopWatch();
     }
   }
 
   String getTitle(int i) {
     switch (i) {
       case 0:
-        return 'Chats';
+        return 'Stop Watch';
       case 1:
-        return 'Friends';
-      case 2:
-        return 'Notifications';
-      case 3:
-        return 'Profile';
+        return 'Timer';
       default:
         return '';
     }
